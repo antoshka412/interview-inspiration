@@ -1,4 +1,4 @@
-package org.example.datastructures;
+package org.problem.datastructure;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -37,12 +37,14 @@ public class MyStackTests {
         assertEquals(5, stack.getMin());
         stack.add(3);
         assertEquals(3, stack.getMin());
+        stack.add(3);
+        assertEquals(3, stack.getMin());
         stack.add(7);
         assertEquals(3, stack.getMin());
         stack.pop(); // removes 7
         assertEquals(3, stack.getMin());
         stack.pop(); // removes 3
-        assertEquals(5, stack.getMin());
+        assertEquals(3, stack.getMin());
     }
 
     @Test

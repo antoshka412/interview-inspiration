@@ -1,7 +1,7 @@
-package org.example.datastructures;
+package org.problem.datastructure;
 
+import java.util.Deque;
 import java.util.LinkedList;
-import java.util.List;
 
 /**
  * Task: To implement own stack of ints using java collection.
@@ -9,16 +9,16 @@ import java.util.List;
  * This stack should support constant time retrieval of the minimum element.
  */
 public class MyStack {
-    private final List<Integer> list = new LinkedList<>();
+    private final Deque<Integer> list = new LinkedList<>();
 
     // To support constant time retrieval of the minimum element in a stack, I will use an auxiliary stack
-    private final List<Integer> minStack = new LinkedList<>();
+    private final Deque<Integer> minStack = new LinkedList<>();
 
     // Add the value at the top of the stack
-    public void add(int value) {
-        list.addFirst(value);
-        if (minStack.isEmpty() || value < minStack.getFirst()) {
-            minStack.addFirst(value);
+    public void add(Integer value) {
+        list.push(value);
+        if (minStack.isEmpty() || value <= minStack.peekFirst()) {
+            minStack.push(value);
         }
     }
 
@@ -27,9 +27,9 @@ public class MyStack {
         if (list.isEmpty()) {
             throw new IllegalStateException("Stack is empty");
         }
-        int value = list.removeFirst();
-        if (value == minStack.getFirst()) {
-            minStack.removeFirst();
+        int value = list.pop();
+        if (value == minStack.peekFirst()) {
+            minStack.pop();
         }
         return value;
     }
@@ -39,14 +39,14 @@ public class MyStack {
         if (list.isEmpty()) {
             throw new IllegalStateException("Stack is empty");
         }
-        return list.getFirst();
+        return list.peekFirst();
     }
 
     public int getMin() {
         if (minStack.isEmpty()) {
             throw new IllegalStateException("Stack is empty");
         }
-        return minStack.getFirst();
+        return minStack.peekFirst();
     }
 
     public boolean isEmpty() {
