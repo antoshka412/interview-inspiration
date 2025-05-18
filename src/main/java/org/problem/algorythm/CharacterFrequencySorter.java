@@ -17,7 +17,8 @@ public class CharacterFrequencySorter {
         Map<Character, Integer> frequencyMap = new HashMap<>();
 
         // Step 1. Get valid characters & count them
-        for (char currentChar : input.toCharArray()) {
+        for (int i = 0; i < input.length(); i++) {
+            char currentChar = input.charAt(i);
             if (Character.isLetterOrDigit(currentChar) || '@' == currentChar) {
                 frequencyMap.merge(currentChar, 1, Integer::sum);
             }
