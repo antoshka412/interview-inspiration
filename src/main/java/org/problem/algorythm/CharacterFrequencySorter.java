@@ -49,14 +49,12 @@ public class CharacterFrequencySorter {
         // 128 - ASCII range
         // index - ASCII of a symbol
         // value - # of occurences
-        long[] counts = new long[128];
+        int[] counts = new int[128];
 
         for (int i = 0; i < input.length(); i++) {
             char currentChar = input.charAt(i);
             if (Character.isLetterOrDigit(currentChar) || '@' == currentChar) {
-
-                int count = (int) (counts[currentChar] & 0xFFFFFFFFL);
-                counts[currentChar] = ((long) currentChar << 32) | (count + 1);
+                counts[currentChar]++;
             }
         }
 
@@ -68,15 +66,15 @@ public class CharacterFrequencySorter {
         }
 
         symbols.sort((a, b) -> {
-            int countA = (int) (counts[a] & 0xFFFFFFFFL);
-            int countB = (int) (counts[b] & 0xFFFFFFFFL);
+            int countA = counts[a];
+            int countB = counts[b];
             return countA != countB ? Integer.compare(countB, countA) : Character.compare(a, b);
         });
 
 
         Map<Character, Integer> sortedMap = new LinkedHashMap<>();
         for (char c : symbols) {
-            int count = (int) (counts[c] & 0xFFFFFFFFL);
+            int count = counts[c];
             if (count > 0) {
                 sortedMap.put(c, count);
             }
