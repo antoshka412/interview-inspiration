@@ -1,0 +1,9 @@
+Method,InputSize,TimeMillis
+HashMap + TreeMap,1000,3.868
+Optimized Array,1000,1.445
+HashMap + TreeMap,10000,1.666
+Optimized Array,10000,0.669
+HashMap + TreeMap,100000,11.977
+Optimized Array,100000,5.697
+HashMap + TreeMap,1000000,21.016
+Optimized Array,1000000,2.841
