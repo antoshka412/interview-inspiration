@@ -48,7 +48,7 @@ public class CharacterFrequencySorter {
     public static Map<Character, Integer> countAndSortCharactersOptimised(String input) {
         // 128 - ASCII range
         // index - ASCII of a symbol
-        // value - # of occurences
+        // value - # of occurrences
         int[] counts = new int[128];
 
         for (int i = 0; i < input.length(); i++) {
@@ -81,6 +81,38 @@ public class CharacterFrequencySorter {
         }
 
         return sortedMap;
+    }
+
+    public static SequencedMap<Character, Integer> countAndSortCharactersBitWise(String input) {
+        // 128 - ASCII range
+        // index - ASCII of a symbol
+        // value - # of occurrences in high bit + character in low bit
+        long[] countAndChars = new long[128];
+
+        for (int i = 0; i < input.length(); i++) {
+            int character = input.charAt(i);
+
+            if (Character.isLetterOrDigit(character) || '@' == character) {
+                countAndChars[character] = (((countAndChars[character] >> 32) + 1L) << 32) | ((Integer.MAX_VALUE - character) & 0xFFFFFFFFL);
+            }
+
+        }
+
+        Arrays.sort(countAndChars);
+
+        SequencedMap<Character, Integer> countsByChar = new LinkedHashMap<>();
+
+        for (int i = countAndChars.length - 1; i >= 0; i--) {
+            long countAndChar = countAndChars[i];
+
+            if (countAndChar == 0L) {
+                continue;
+            }
+
+            countsByChar.put((char) (Integer.MAX_VALUE - (countAndChar & 0xFFFFFFFFL)), (int) (countAndChar >> 32));
+        }
+
+        return countsByChar;
     }
 
 

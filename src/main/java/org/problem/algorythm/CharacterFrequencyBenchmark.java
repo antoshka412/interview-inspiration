@@ -38,6 +38,12 @@ public class CharacterFrequencyBenchmark {
                 CharacterFrequencySorter.countAndSortCharactersOptimised(input);
                 duration = System.nanoTime() - startTime;
                 writer.printf("Optimized Array,%d,%.3f%n", size, duration / 1_000_000.0);
+
+                // Benchmark Method 3: Bitwise operations
+                startTime = System.nanoTime();
+                CharacterFrequencySorter.countAndSortCharactersBitWise(input);
+                duration = System.nanoTime() - startTime;
+                writer.printf("Bitwise operations Array,%d,%.3f%n", size, duration / 1_000_000.0);
             }
         }
     }
