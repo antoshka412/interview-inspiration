@@ -1,0 +1,13 @@
+Benchmark                              (inputSize)  Mode  Cnt      Score   Error  Units
+CharacterFrequencyBenchmark.baseline          1000  avgt          16.589          us/op
+CharacterFrequencyBenchmark.baseline         10000  avgt         140.694          us/op
+CharacterFrequencyBenchmark.baseline        100000  avgt        1483.432          us/op
+CharacterFrequencyBenchmark.baseline       1000000  avgt       14860.805          us/op
+CharacterFrequencyBenchmark.bitwise           1000  avgt           3.966          us/op
+CharacterFrequencyBenchmark.bitwise          10000  avgt          15.889          us/op
+CharacterFrequencyBenchmark.bitwise         100000  avgt         149.741          us/op
+CharacterFrequencyBenchmark.bitwise        1000000  avgt        1385.695          us/op
+CharacterFrequencyBenchmark.optimised         1000  avgt           4.191          us/op
+CharacterFrequencyBenchmark.optimised        10000  avgt          10.939          us/op
+CharacterFrequencyBenchmark.optimised       100000  avgt          92.122          us/op
+CharacterFrequencyBenchmark.optimised      1000000  avgt         879.207          us/op

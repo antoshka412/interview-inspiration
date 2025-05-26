@@ -1,0 +1,10 @@
+Benchmark                                                                                              (input)  Mode  Cnt  Score   Error  Units
+CharacterFrequencyBenchmark.baseline    abc123@abc123@abc123@abc123@abc123@abc123@abc123@abc123@abc123@abc123@  avgt   10  1.385 ± 0.187  us/op
+CharacterFrequencyBenchmark.baseline                            TheQuickBrownFoxJumpsOverTheLazyDog1234567890@  avgt   10  2.861 ± 0.056  us/op
+CharacterFrequencyBenchmark.baseline   aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa  avgt   10  0.964 ± 0.075  us/op
+CharacterFrequencyBenchmark.bitwise     abc123@abc123@abc123@abc123@abc123@abc123@abc123@abc123@abc123@abc123@  avgt   10  0.571 ± 0.046  us/op
+CharacterFrequencyBenchmark.bitwise                             TheQuickBrownFoxJumpsOverTheLazyDog1234567890@  avgt   10  1.608 ± 0.119  us/op
+CharacterFrequencyBenchmark.bitwise    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa  avgt   10  0.441 ± 0.007  us/op
+CharacterFrequencyBenchmark.optimised   abc123@abc123@abc123@abc123@abc123@abc123@abc123@abc123@abc123@abc123@  avgt   10  0.305 ± 0.045  us/op
+CharacterFrequencyBenchmark.optimised                           TheQuickBrownFoxJumpsOverTheLazyDog1234567890@  avgt   10  1.899 ± 0.099  us/op
+CharacterFrequencyBenchmark.optimised  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa  avgt   10  0.229 ± 0.005  us/op
