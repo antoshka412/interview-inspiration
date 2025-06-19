@@ -3,7 +3,7 @@ package org.problem.algorythm;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-class StringFrequencySorterTest {
+public class SubstringFrequencySorterTest {
 
     @Test
     void testMostFrequentSubstring() {
