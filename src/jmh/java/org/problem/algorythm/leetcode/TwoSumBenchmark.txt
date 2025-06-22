@@ -1,0 +1,9 @@
+Benchmark                                (inputSize)  Mode  Cnt  Score   Error  Units
+TwoSumBenchmark.benchmarkTwoSumFastUtil         1000  avgt       0.002          ms/op
+TwoSumBenchmark.benchmarkTwoSumFastUtil        10000  avgt       0.001          ms/op
+TwoSumBenchmark.benchmarkTwoSumFastUtil       100000  avgt       0.001          ms/op
+TwoSumBenchmark.benchmarkTwoSumFastUtil      1000000  avgt       0.087          ms/op
+TwoSumBenchmark.benchmarkTwoSumHashMap          1000  avgt       0.004          ms/op
+TwoSumBenchmark.benchmarkTwoSumHashMap         10000  avgt       0.002          ms/op
+TwoSumBenchmark.benchmarkTwoSumHashMap        100000  avgt       0.002          ms/op
+TwoSumBenchmark.benchmarkTwoSumHashMap       1000000  avgt       0.098          ms/op

@@ -16,6 +16,7 @@ dependencies {
     jmh 'org.openjdk.jmh:jmh-generator-bytecode:1.37'
 
     implementation 'org.apache.commons:commons-text:1.10.0'
+    implementation 'it.unimi.dsi:fastutil:8.5.9'
 
     jmhAnnotationProcessor 'org.openjdk.jmh:jmh-generator-annprocess:1.37'
     testImplementation platform('org.junit:junit-bom:5.10.2')

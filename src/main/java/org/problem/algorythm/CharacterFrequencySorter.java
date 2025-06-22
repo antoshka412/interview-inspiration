@@ -30,7 +30,7 @@ public class CharacterFrequencySorter {
         for (Map.Entry<Character, Integer> entry : frequencyMap.entrySet()) {
             char currentChar = entry.getKey();
             int frequency = entry.getValue();
-            sortedMap.computeIfAbsent(frequency, _ -> new TreeSet<>()).add(currentChar);
+            sortedMap.computeIfAbsent(frequency, key -> new TreeSet<>()).add(currentChar);
         }
 
         // Step 3. Convert to LinkedHashMap to preserve precious order
